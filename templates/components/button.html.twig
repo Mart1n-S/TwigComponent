@@ -1,4 +1,4 @@
-{% block button %}
+{# {% block button %}
 	<button type="{{ type|default('button') }}" {{ attributes.defaults({ class: 'btn' } ) }}>
 		{% if icon is defined %}
 			<span class="btn-icon left">
@@ -7,5 +7,12 @@
 		{% endif %}
 
 		{{ label }}
+	</button>
+{% endblock %} #}
+
+
+{% block button %}
+	<button type="{{ type|default('button') }}" {{ attributes.defaults({ class: 'btn' } ) }}>
+		{% block content %}{% endblock %}
 	</button>
 {% endblock %}
