@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>Bienvenue sur ma page</h1>
+
+	<twig:Button label="Cliquez ici"/>
+
+	<twig:Button class="btn-primary" label="Télécharger" icon="{{asset('images/icons/ic_download.svg')}}" icon_alt="Télécharger"/>
+
+
+	<twig:Button label="Soumettre" type="submit" class="btn-primary"/>
+
+	<twig:Button label="Envoyer la demande" aria-label="Envoyer la demande" disabled="true"/>
+
+	<twig:Button label="Voir les détails" class="btn-info" aria-label="Voir les détails du produit" data-action="click->modal#open" data-target="modal.details"/>
+
+	<twig:Button label="Valider" class="btn-warning" data-id="123" data-toggle="tooltip" data-placement="top" title="Cliquez pour valider"/>
+
+{% endblock %}

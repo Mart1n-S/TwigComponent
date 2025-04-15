@@ -1,5 +1,11 @@
 {% block button %}
-	<button type="{{ type|default('button') }}" class="{{ class|default('btn') }}" {% if aria_label %} aria-label="{{ aria_label }}" {% endif %} {% if disabled %} disabled {% endif %} {{ attributes|raw }}>
+	<button type="{{ type|default('button') }}" {{ attributes.defaults({ class: 'btn' } ) }}>
+		{% if icon is defined %}
+			<span class="btn-icon left">
+				<img src="{{ icon }}" class="btn-icon-img" alt="{{ icon_alt|default('') }}">
+			</span>
+		{% endif %}
+
 		{{ label }}
 	</button>
 {% endblock %}
