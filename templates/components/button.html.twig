@@ -1,0 +1,5 @@
+{% block button %}
+	<button type="{{ type|default('button') }}" class="{{ class|default('btn') }}" {% if aria_label %} aria-label="{{ aria_label }}" {% endif %} {% if disabled %} disabled {% endif %} {{ attributes|raw }}>
+		{{ label }}
+	</button>
+{% endblock %}
